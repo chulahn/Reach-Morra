@@ -8,7 +8,7 @@ exports.Wrapper = class extends React.Component {
     return (
       <div className="App">
         <header className="App-header" id="root">
-          <h1>Morra</h1>
+          <h1>ShareTree</h1>
           {content}
         </header>
       </div>
@@ -63,14 +63,14 @@ exports.DeployerOrAttacher = class extends React.Component {
         <p>
           <button
             onClick={() => parent.selectDeployer()}
-          >Starsky</button>
-          <br /> Let's start a game
+          >Plant Tree</button>
+          <br /> No Space?, Purchase a tree to plant // parent.selectDeployer()
         </p>
         <p>
           <button
             onClick={() => parent.selectAttacher()}
-          >Hutch</button>
-          <br /> Join an existing game
+          >Confirm Offer / Hutch</button>
+          <br />Check offers to plant tree // parent.selectAttacher();
         </p>
       </div>
     );

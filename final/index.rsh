@@ -49,6 +49,7 @@ forall(UInt, playHandA =>
 const Player = {
   ...hasRandom, 
   getHand: Fun([], UInt),
+  getHand2: Fun([], UInt),
   getGuess: Fun([UInt], UInt),
   seeActual: Fun([UInt], Null),
   seeOutcome: Fun([UInt], Null),

@@ -8,7 +8,6 @@ import * as backend from './build/index.main.mjs';
 import { loadStdlib } from '@reach-sh/stdlib';
 const reach = loadStdlib(process.env);
 
-
 import { ALGO_MyAlgoConnect as MyAlgoConnect } from '@reach-sh/stdlib';
 reach.setWalletFallback(reach.walletFallback({
   providerEnv: 'TestNet', MyAlgoConnect }));
@@ -53,7 +52,7 @@ class Player extends React.Component {
     random() { return reach.hasRandom.random(); }
     async getHand() {
         const hand = await new Promise(resolveHandP => {
-            this.setState({view: 'GetHand', playable: true, resolveHandP});
+            this.setState({view: 'GetHand2', playable: true, resolveHandP});
         });
         this.setState({view: 'WaitingForResults', hand});
         return hand;
@@ -82,7 +81,7 @@ class Deployer extends Player {
         const ctc = this.props.acc.contract(backend);
         this.setState({view: 'Deploying', ctc});
         this.wager = reach.parseCurrency(this.state.wager);
-        this.deadline = {ETH: 10, ALGO: 100, CFX: 1000}[reach.connector];
+        this.deadline = {ETH: 500, ALGO: 100, CFX: 1000}[reach.connector];
         backend.Starsky(ctc, this);
         const ctcInfoStr = JSON.stringify(await ctc.getInfo(), null, 2);
         this.setState({view: 'WaitingForAttacher', ctcInfoStr});
@@ -110,7 +109,7 @@ class Attacher extends Player {
     }
     termsAccepted() {
         this.state.resolveAcceptedP();
-        this.setState({view: 'WaitingForTurn'});
+        // this.setState({view: 'WaitingForTurn'});
     }
     render() { return renderView(this, AttacherViews);}
 }

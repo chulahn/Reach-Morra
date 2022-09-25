@@ -1,5 +1,9 @@
 import React from 'react';
 import PlayerViews from './PlayerViews';
+import Image from "../1.jpeg";
+import Image2 from "../2.jpeg";
+import Image3 from "../3.jpeg";
+import "../index.css";
 
 const exports = {...PlayerViews};
 
@@ -10,7 +14,12 @@ exports.Wrapper = class extends React.Component {
     const {content} = this.props;
     return (
       <div className="Deployer">
-        <h2>Deployer (Starsky)</h2>
+        <h2>Plant a Tree In //Deployer (Starsky)</h2>
+        <h2>2 oak trees for Portland</h2>
+        4.9 Stars, Superhost. Marlborough, Massachusetts
+        <img className="image1" src={Image}></img>
+        <img className="image2" src={Image2}></img>
+        <img className="image3" src={Image3}></img>
         {content}
       </div>
     );
@@ -22,16 +31,18 @@ exports.SetWager = class extends React.Component {
     const {parent, defaultWager, standardUnit} = this.props;
     const wager = (this.state || {}).wager || defaultWager;
     return (
-      <div>
-        <input
+      <div className="treeAgreement">
+        Quantity: <input
           type='number'
           placeholder={defaultWager}
           onChange={(e) => this.setState({wager: e.currentTarget.value})}
-        /> {standardUnit}
-        <br />
+        /> {standardUnit}<br/>
+          Type: English Oak<br/>
+          Offer: USD 250 + 15% C02 Credit<br/>
         <button
           onClick={() => parent.setWager(wager)}
-        >Set wager</button>
+        >Donate Tree / Set wager</button>
+        <br />
       </div>
     );
   }
@@ -42,11 +53,11 @@ exports.Deploy = class extends React.Component {
     const {parent, wager, standardUnit} = this.props;
     return (
       <div>
-        Wager (pay to deploy): <strong>{wager}</strong> {standardUnit}
+        Tree To Donate Fee (pay to deploy): <strong>{wager}</strong> {standardUnit}
         <br />
         <button
           onClick={() => parent.deploy()}
-        >Deploy</button>
+        >Donate Tree // parent.deploy</button>
       </div>
     );
   }
@@ -55,7 +66,7 @@ exports.Deploy = class extends React.Component {
 exports.Deploying = class extends React.Component {
   render() {
     return (
-      <div>Deploying... please wait.</div>
+      <div>Sending Tree-to-plant offer... // Deploying... please wait.</div>
     );
   }
 }

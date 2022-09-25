@@ -8,7 +8,7 @@ exports.Wrapper = class extends React.Component {
     const {content} = this.props;
     return (
       <div className="Attacher">
-        <h2>Attacher (Hutch)</h2>
+        <h2>Tree Sponsor (Hutch)</h2>
         {content}
       </div>
     );
@@ -60,7 +60,7 @@ exports.AcceptTerms = class extends React.Component {
         <button
           disabled={disabled}
           onClick={() => {
-            this.setState({disabled: true});
+            this.setState({disabled: true, wager});
             parent.termsAccepted();
           }}
         >Accept terms and pay wager</button>

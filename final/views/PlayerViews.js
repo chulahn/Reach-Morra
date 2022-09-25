@@ -46,6 +46,18 @@ exports.GetHand = class extends React.Component {
   }
 }
 
+exports.GetHand2 = class extends React.Component {
+  render() {
+    const {parent, playable, wager} = this.props;
+    return (
+      <div>
+        You have successfully planted the tree(s).
+        {wager}
+      </div>
+    )
+  }
+}
+
 exports.GetGuess = class extends React.Component{
   render(){
     //constants ?
