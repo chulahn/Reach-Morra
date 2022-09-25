@@ -58,19 +58,19 @@ exports.DeployerOrAttacher = class extends React.Component {
     const {parent} = this.props;
     return (
       <div>
-        Please select a role:
+        Please select a action:
         <br />
         <p>
           <button
             onClick={() => parent.selectDeployer()}
           >Plant Tree</button>
-          <br /> No Space?, Purchase a tree to plant // parent.selectDeployer()
+          <br /> No Space?  Purchase a tree to plant
         </p>
         <p>
           <button
             onClick={() => parent.selectAttacher()}
-          >Confirm Offer / Hutch</button>
-          <br />Check offers to plant tree // parent.selectAttacher();
+          >Confirm Offer</button>
+          <br />Check offers to plant tree
         </p>
       </div>
     );

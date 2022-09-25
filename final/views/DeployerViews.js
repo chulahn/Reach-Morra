@@ -14,7 +14,7 @@ exports.Wrapper = class extends React.Component {
     const {content} = this.props;
     return (
       <div className="Deployer">
-        <h2>Plant a Tree In //Deployer (Starsky)</h2>
+        <h2>Plant a Tree In</h2>
         <h2>2 oak trees for Portland</h2>
         4.9 Stars, Superhost. Marlborough, Massachusetts
         <img className="image1" src={Image}></img>
@@ -57,7 +57,7 @@ exports.Deploy = class extends React.Component {
         <br />
         <button
           onClick={() => parent.deploy()}
-        >Donate Tree // parent.deploy</button>
+        >Donate Tree</button>
       </div>
     );
   }
@@ -66,7 +66,7 @@ exports.Deploy = class extends React.Component {
 exports.Deploying = class extends React.Component {
   render() {
     return (
-      <div>Sending Tree-to-plant offer... // Deploying... please wait.</div>
+      <div>Sending Tree-to-plant offer... please wait.</div>
     );
   }
 }
@@ -87,7 +87,7 @@ exports.WaitingForAttacher = class extends React.Component {
     const {ctcInfoStr} = this.props;
     return (
       <div>
-        Waiting for Hutch to join...
+        Waiting for TreeBro to join...
         <br /> Please give them this contract info:
         <pre className='ContractInfo'>
           {ctcInfoStr}

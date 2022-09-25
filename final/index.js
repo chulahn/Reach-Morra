@@ -110,7 +110,7 @@ class Attacher extends Player {
     }
     async termsAccepted() {
         this.state.resolveAcceptedP();
-        await reach.wait(5);
+        await reach.wait(14);
         this.setState({view: 'WaitingForTurn'});
     }
     render() { return renderView(this, AttacherViews);}
