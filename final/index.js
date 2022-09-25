@@ -29,6 +29,7 @@ class App extends React.Component {
         const balAtomic = await reach.balanceOf(acc);
         const bal = reach.formatCurrency(balAtomic, 4);
         this.setState({acc, bal});
+        this.bal = bal;
         if(await reach.canFundFromFaucet()){
             this.setState({view: 'FundAccount'});
         } else {
@@ -107,9 +108,10 @@ class Attacher extends Player {
             this.setState({view: 'AcceptTerms', wager, resolveAcceptedP});
         });
     }
-    termsAccepted() {
+    async termsAccepted() {
         this.state.resolveAcceptedP();
-        // this.setState({view: 'WaitingForTurn'});
+        await reach.wait(5);
+        this.setState({view: 'WaitingForTurn'});
     }
     render() { return renderView(this, AttacherViews);}
 }

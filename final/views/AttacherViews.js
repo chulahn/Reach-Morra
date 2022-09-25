@@ -71,10 +71,12 @@ exports.AcceptTerms = class extends React.Component {
 
 exports.WaitingForTurn = class extends React.Component {
   render() {
+    const {wager, bal} = this.props;
     return (
       <div>
-        Waiting for the other player...
-        <br />Think about which move you want to play.
+        Payment received: {wager}
+        <br />
+        Balance: {bal}
       </div>
     );
   }
